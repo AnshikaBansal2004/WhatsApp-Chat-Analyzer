@@ -50,7 +50,8 @@ if uploaded_file is not None:
         st.title("Monthly TimeLine")
         timeline = helper.monthly_timeline(selected_user,df)
         fig,ax = plt.subplots()
-        ax.plot(timeline['time'], timeline['Message'],color='red')
+        # ax.plot(timeline['time'], timeline['Message'],color='red')
+        ax.plot(timeline['time'].values, timeline['Message'].values, color='red')
         plt.xticks(rotation="vertical")
         st.pyplot(fig)
 
